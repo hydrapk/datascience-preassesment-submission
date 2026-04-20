@@ -3,7 +3,7 @@ from typing import List, Dict
 
 def analyze_commits(repo_url: str, issue_ids: List[str]) -> Dict:
     """
-    Simple PyDriller script to:
+    Script to:
     - Find unique commits whose message contains any of the given issue IDs (e.g. CAMEL-180)
     - Calculate:
         1. Average unique files changed = (total distinct file paths across ALL commits) / total commits
@@ -61,12 +61,10 @@ def analyze_commits(repo_url: str, issue_ids: List[str]) -> Dict:
         "avg_dmm": avg_dmm
     }
 
-
-# ====================== EXAMPLE USAGE ======================
 if __name__ == "__main__":
     # CHANGE THESE AS NEEDED
     REPO_URL = "https://github.com/apache/camel.git"
-    ISSUE_IDS = ["CAMEL-180", "CAMEL-321","CAMEL-1818","CAMEL-3214","CAMEL-18065"]   # add more IDs here
+    ISSUE_IDS = ["CAMEL-180", "CAMEL-321","CAMEL-1818","CAMEL-3214","CAMEL-18065"]
 
     results = analyze_commits(REPO_URL, ISSUE_IDS)
 
